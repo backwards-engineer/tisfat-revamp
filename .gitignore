@@ -161,3 +161,21 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+
+# Browser dependencies and local state
+node_modules/
+*.log
+.env
+.env.*
+!.env.example
+.ssh/
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+id_github*
+credentials.json
+secrets.json
+# Keep the README screenshot; omit development captures.
+web/*preview.png
+!web/reimagined-preview.png
