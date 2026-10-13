@@ -88,4 +88,3 @@ function kungFuDemo(){
 }
 if(typeof module!=='undefined')module.exports=kungFuDemo;else root.kungFuDemo=kungFuDemo;
 })(globalThis);
-

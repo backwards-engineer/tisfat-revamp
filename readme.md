@@ -1,53 +1,48 @@
-##About
+# TISFAT Reimagined
 
-**TISFAT** *(This Is Stick Figure Animation Theatre)* is a free stick figure animation tool made in Delphi.
+A locally hosted, browser-based reimagining of **TISFAT — This Is Stick Figure Animation Theatre**. Pose stick figures, set keyframes, and let tweening fill in the motion.
 
-TISFAT was designed not only to be a self-contained single executable able run on any version of Windows (or Linux/MacOS via WINE), but also to be usable by anyone, of any age, without any prior animation experience.
+![TISFAT Reimagined animation editor](web/reimagined-preview.png)
 
-In some ways, TISFAT has been successful in achieving this goal, with users of all ages and skill ranges.
+## Run locally
 
-Users have found TISFAT's simple tweening approach to animation easy to pick up and achieve desired results quickly, without the need to animate every frame.
+Requires **Node.js 18 or later**. No dependency installation or account is needed.
 
-It has however reached the point where it is no longer sensible to continue development on TISFAT, with development focus being moved on to a sequel. But if you're looking for a quick and easy way to make animations and export them to Flash, look no further than TISFAT.
+```sh
+cd web
+npm start
+```
 
-##Features
+Open [http://127.0.0.1:4173](http://127.0.0.1:4173). On Windows you can also double-click `web/start.bat`. The server listens only on localhost; stop it with Ctrl+C.
 
-* Drawing primitives (lines, rectangles, bitmaps, polygons, text)
-* Simple ready-to-use stick figures
-* The ability to create any custom stick figure, with as many limbs as you choose
-* Attaching bitmaps to limbs
-* Drawing stick figures as curves
-* Create-A-Scene, enabling creating animation through physics
-* Edit and run-time onion skinning
-* Tracing of a video background
-* Setting alpha values of every element
-* Rotation of most elements
-* Export to popular formats (Animated GIF, AVI, Flash)
+## Features
 
-If you can change it, you can tween it!
+- Pose articulated figures with locked limb lengths or intentional stretching.
+- Add custom limbs with numbered joints, parent highlights, and attachment previews.
+- Animate layers with keyframes, linear/smooth/hold tweening, and onion skins.
+- Add rectangles, ellipses, lines, text, and images, with solid fills for shapes and figure heads.
+- Adjust color, opacity, scale, rotation, layer order, and visibility.
+- Undo/redo, browser autosave, and portable project save/open.
+- Export PNG frames and WebM animations.
+- Start with two kung fu fighters whose punches and kicks connect and trigger timed reactions.
 
+Use **Space** to play, **Left/Right** to step, **K** to add a keyframe, and **V / M / L** for pose, move, and add-limb tools.
 
-##Sanity Caution
-Oh TISFAT.
+## Projects and compatibility
 
-I keep claiming it's the worst written code on the planet... and recently someone asked if they could have the source to "play around with" (more likely it would have its way with them).
+Projects use versioned `.tisfat.json` files. Download project backups before clearing browser data. Existing browser-edition projects remain compatible. Original Delphi `.fat` import, physics/Create-A-Scene, sound, video tracing, curved figures, bitmap limb attachments, and GIF/AVI/Flash export are not implemented. WebM export runs in real time; keep the tab active while exporting.
 
-After being quite happy that I had lost the source a while back and could not prove that theory... well, curiosity got the better of me and I played with some undelete tools on an old hard-drive I had.
+## Development
 
-So here it is, the source code for my 15 minutes of fame, released under the "don't tell anyone I wrote it unless they think it's awesome" license.
+```sh
+cd web
+npm test
+```
 
-I've been hesitant to release it in the past, because it is truly awful, from over a decade ago, before I could program, or even knew what the "Object" in Object-Pascal meant (which should be quite obvious).
-I'd hate for this ever to hurt my chances of anyone ever employing me based on this code, so I would just like to state that I am infinitely better now.
-Infinitely.
-But also, keep in mind that somehow I managed to keep working on this, understanding the mess, knowing exactly where in the bazillions of lines of code things happened... only a smart person could do that. Nod nod nod. Did I write smart? I meant to type "loony".
+The app uses plain JavaScript and Canvas with a small Node.js static server. See [browser implementation notes](web/README.md) for more details.
 
-So anyway, use this at your own peril, don't blame me if [this](http://cdn2.holytaco.com/wp-content/uploads/2011/03/378433_main.jpg) happens.
-It used to compile with Delphi 6 Personal Edition, and somewhere along the line I managed to use the ... Delphi... Studio... something... I don't remember what it was called, all I remember is that it required .NET 1.1, was incredibly bloated and slow, and crashed more than TISFAT.
+## Original project
 
-And some of the many things I learnt doing this:
+The Delphi source is preserved in the repository root. This remake follows its layer, keyframe, tweening, and parented-joint concepts while providing a new browser implementation.
 
-* Never put code directly in an event handler, make it call an objects function or something
-* $I including files in Delphi is not smart, it's evil, and made debugging almost impossible (back in Delphi 5 days at least)
-* Delphi objects... well, you don't need to allocate memory for them in the traditional malloc() way, nor do you need to use pointers to them... instance := object.Create() works juuust fine, and is a lovely way of doing things.
-* When designing a file format, do just that, design it! The amount of fudges in the TISFAT format just to cater for tiny variances in previous versions... geez.
-* I quite enjoy working in my own filth.
+Original source: [backwards-engineer/TISFAT](https://github.com/backwards-engineer/TISFAT). The [original README](docs/legacy-readme.md) preserves the original author's background and licensing statement.
