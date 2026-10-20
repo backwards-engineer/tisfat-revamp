@@ -8,7 +8,7 @@ Pose figures by dragging joints; the orange root moves the figure. Select a new 
 
 The example opens on first launch. Projects use versioned `.tisfat.json` files, not Delphi `.fat` files. Download a project backup before clearing browser data. WebM export runs in real time; keep the tab active while exporting. PNG/WebM exports exclude grid, onion skins, and editing handles. Imported animated images render as browser images rather than timeline-synchronized media.
 
-This remake follows the layers/keyframes/tweening concepts in `main.pas`, `movieobject.pas`, and `stickjoint.pas`. It is a new implementation, not a full source translation. Legacy FAT import, physics/Create-A-Scene, sound, video tracing, curved figures, bitmap limb attachments, and GIF/AVI/Flash output are not implemented.
+This remake follows the layer, keyframe, tweening, and joint concepts in the [original TISFAT source](https://github.com/backwards-engineer/TISFAT). It is a new implementation, not a full source translation. Legacy FAT import, physics/Create-A-Scene, sound, video tracing, curved figures, bitmap limb attachments, and GIF/AVI/Flash output are not implemented.
 
 Run `npm test` for animation model checks.
 

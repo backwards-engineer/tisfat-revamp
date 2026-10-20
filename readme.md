@@ -43,6 +43,6 @@ The app uses plain JavaScript and Canvas with a small Node.js static server. See
 
 ## Original project
 
-The Delphi source is preserved in the repository root. This remake follows its layer, keyframe, tweening, and parented-joint concepts while providing a new browser implementation.
+This repository contains the browser remake. It follows the original TISFAT layer, keyframe, tweening, and parented-joint concepts. The legacy Delphi source and build assets are available in the original repository linked below.
 
 Original source: [backwards-engineer/TISFAT](https://github.com/backwards-engineer/TISFAT). The [original README](docs/legacy-readme.md) preserves the original author's background and licensing statement.
